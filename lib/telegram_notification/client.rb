@@ -18,9 +18,11 @@ module TelegramNotification
 
       # puts "url: #{url}, params: #{params}"
 
-      response = Net::HTTP.post(url, params, 'Content-Type': 'application/json')
 
-      JSON.parse(response.body)
+      response = Net::HTTP.post(url, params, 'Content-Type': 'application/json')
+      response_body = JSON.parse(response.body)
+      return response_body["ok"] == true
+
     end
 
     private

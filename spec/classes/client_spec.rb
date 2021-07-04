@@ -4,7 +4,7 @@ module TelegramNotification
   RSpec.describe ::TelegramNotification::Client do
     before :each do
       ::TelegramNotification.config
-      @client = ::TelegramNotification::Client.new
+      @client = ::TelegramNotification.client
     end
 
     it "default api_url" do
@@ -12,7 +12,7 @@ module TelegramNotification
     end
 
     it 'test send' do
-      expect(@client.post(text: "test message")["ok"]).to eq true
+      expect(@client.post(text: "test message")).to eq true
     end
 
   end

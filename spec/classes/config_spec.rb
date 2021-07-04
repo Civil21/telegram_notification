@@ -10,20 +10,26 @@ module TelegramNotification
     end
 
     it 'should have api_token' do
+      ::TelegramNotification.configure do |c|
+        c.api_token = 'api_token'
+      end
       expect(::TelegramNotification.config.api_token).to eq 'api_token'
     end
 
     it 'should have chat_id' do
+      ::TelegramNotification.configure do |c|
+        c.chat_id = 'chat_id'
+      end
       expect(::TelegramNotification.config.chat_id).to eq 'chat_id'
     end
 
     it 'should reflect changes through block' do
       ::TelegramNotification.configure do |c|
-        c.api_token = 'api_token2'
-        c.chat_id = 'chat_id2'
+        c.api_token = "api_token2"
+        c.chat_id = "chat_id2"
       end
-      expect(::TelegramNotification.config.api_token).to eq 'api_token2'
-      expect(::TelegramNotification.config.chat_id).to eq 'chat_id2'
+      expect(::TelegramNotification.config.api_token).to eq "api_token2"
+      expect(::TelegramNotification.config.chat_id).to eq "chat_id2"
     end
   end
 end

@@ -16,4 +16,12 @@ module TelegramNotification
     yield config
     @config
   end
+
+  def self.client
+    @client ||= ::TelegramNotification::Client.new
+  end
+
+  def self.new(*options)
+    ::TelegramNotification::TelegramNotification.new(*options)
+  end
 end
