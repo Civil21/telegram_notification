@@ -22,7 +22,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+[GENERATE TELEGRAM BOT](https://telegram.me/BotFather)
+
+add your bot to chat
+
+add data to .env
+
+    TELEGRAM_API_TOKEN= <API TOKEN YOUR BOT>
+    TELEGRAM_CHAT_ID="<CHAT_ID>"
+    
+send message with method:
+
+    ::TelegramNotification.new.send_message(text)
 
 ## Development
 
